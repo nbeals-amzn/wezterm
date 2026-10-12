@@ -1,6 +1,12 @@
 name: macos_continuous
 
 on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for running the workflow'
+        required: false
+        default: 'Manual test'
   schedule:
     - cron: "10 3 * * *"
   push:
